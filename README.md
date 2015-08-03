@@ -4,12 +4,12 @@ BaseImage consists of the precompiled hashicorp consul-template binary and prese
 
 **Envrionment Variables Required**
 
-*VAULT_ADDR = URL for Vault server
-*VAULT_TOKEN = Token used to access vault for bootstrap
-*APPID = Application ID
-*POLICY = Vault policy to associate with the Application
-*APPNAME = Appname mostly used for configuration files
-*VAULT_ADDR = vault server address with protocol and port
+* VAULT_ADDR = URL for Vault server
+* VAULT_TOKEN = Token used to access vault for bootstrap
+* APPID = Application ID
+* POLICY = Vault policy to associate with the Application
+* APPNAME = Appname mostly used for configuration files
+* VAULT_ADDR = vault server address with protocol and port
 
 **Example template replacement**
 
