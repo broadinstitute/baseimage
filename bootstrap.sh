@@ -13,7 +13,7 @@ POLICY=${POLICY:-none}
 APPID=$(uuidgen)
 if [ -z ${ENVIRONMENT} ]; then ENVIRONMENT=ci; fi
 vault write auth/app-id/map/app-id/${APPID} value=${POLICY} display_name=${APPNAME}
-vault write auth/app-id/map/user-id/apptest value=${APPID}
+vault write auth/app-id/map/user-id/${APPNAME} value=${APPID}
 echo ${APPID}
 TOKEN=`curl -s --data "{\"app_id\":\"${APPID}\",\"user_id\":\"${APPNAME}\"}" ${VAULT_ADDR}/v1/auth/app-id/login | \
          sed -e 's/^.*"client_token":"\([^"]*\)".*$/\1/'`
