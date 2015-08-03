@@ -16,5 +16,5 @@ BaseImage consists of the precompiled hashicorp consul-template binary and prese
 consul-template -config=/etc/consul-template.conf -once -template=/etc/${APPNAME}.tmpl:/etc/${APPNAME}.conf
 
 
-docker run -ti -e VAULT_ADDR=<VAULT ADDRESS> -e VAULT_TOKEN=<TOKEN> -e APPID=secretspython_test -e POLICY=secretspython_test -e APPNAME=test broadinstitute/baseimage /opt/run.sh
+docker run -ti -e VAULT_ADDR=<VAULT ADDRESS> -e VAULT_TOKEN=<TOKEN> -e APPID=secretspython_test -e POLICY=secretspython_test -e APPNAME=test broadinstitute/baseimage /opt/bootstrap.sh
 
