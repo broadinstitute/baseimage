@@ -10,4 +10,4 @@ COPY consul-template.conf test.tmpl /etc/
 COPY vault /usr/sbin/
 RUN apt-get update && apt-get install -y uuid-runtime
 
-COPY bootstrap.sh /opt/
+COPY bootstrap.sh /usr/sbin/
