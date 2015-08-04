@@ -2,7 +2,6 @@
 
 VAULT_ADDR=${VAULT_ADDR:-https://localhost}
 CONSUL_IP=`/sbin/ip route | awk '/default/ { print $3 }'`
-VAULT_TOKEN=${VAULT_TOKEN}
 
 sed -i "s;%%VAULT_ADDR%%;${VAULT_ADDR};" "/etc/consul-template.conf"
 sed -i "s;%%CONSUL_IP%%;${CONSUL_IP};" "/etc/consul-template.conf"
@@ -19,4 +18,4 @@ TOKEN=`curl -s --data "{\"app_id\":\"${APPID}\",\"user_id\":\"${APPNAME}\"}" ${V
          sed -e 's/^.*"client_token":"\([^"]*\)".*$/\1/'`
 echo ${TOKEN}
 echo -n "${TOKEN}" > ~/.vault-token
-
+export VAULT_TOKEN=${TOKEN}
