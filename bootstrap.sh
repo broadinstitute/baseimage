@@ -8,7 +8,6 @@ sed -i "s;%%CONSUL_IP%%;${CONSUL_IP};" "/etc/consul-template.conf"
 
 
 cat /dev/shm/.token | tr -d '\n' > /root/.vault-token
-export VAULT_TOKEN=`cat /root/.vault-token`
 export APPNAME=${APPNAME:-apptest}
 export POLICY=${POLICY:-none}
 export APPID=$(uuidgen)
@@ -20,4 +19,3 @@ export TOKEN=`curl -s --data "{\"app_id\":\"${APPID}\",\"user_id\":\"${APPNAME}\
          sed -e 's/^.*"client_token":"\([^"]*\)".*$/\1/'`
 echo ${TOKEN}
 echo -n "${TOKEN}" > ~/.vault-token
-unset VAULT_TOKEN
