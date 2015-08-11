@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 VAULT_ADDR=${VAULT_ADDR:-https://localhost}
 CONSUL_IP=`/sbin/ip route | awk '/default/ { print $3 }'`
