@@ -18,4 +18,4 @@ TOKEN=`curl -s --data "{\"app_id\":\"${APPID}\",\"user_id\":\"${APPNAME}\"}" ${V
          sed -e 's/^.*"client_token":"\([^"]*\)".*$/\1/'`
 echo ${TOKEN}
 echo -n "${TOKEN}" > ~/.vault-token
-export VAULT_TOKEN=${TOKEN}
+unset VAULT_TOKEN
