@@ -7,6 +7,7 @@ sed -i "s;%%VAULT_ADDR%%;${VAULT_ADDR};" "/etc/consul-template.conf"
 sed -i "s;%%CONSUL_IP%%;${CONSUL_IP};" "/etc/consul-template.conf"
 
 
+VAULT_TOKEN=`cat /dev/shm/.token | tr -d '\n'`
 APPNAME=${APPNAME:-apptest}
 POLICY=${POLICY:-none}
 APPID=$(uuidgen)
