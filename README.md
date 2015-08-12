@@ -4,7 +4,6 @@ BaseImage consists of the precompiled hashicorp consul-template binary and prese
 
 **Envrionment Variables Required**
 
-* POLICY = Vault policy to associate with the Application
 * APPNAME = Appname mostly used for configuration files
 * VAULT_ADDR = vault server address with protocol and port
 * ENVIRONMENT = One of dev,staging,production
